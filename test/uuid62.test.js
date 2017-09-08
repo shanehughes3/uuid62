@@ -1,6 +1,6 @@
 const chai = require('chai');
 const should = chai.should();
-var uuid62 = require('../uuid62');
+const uuid62 = require('../uuid62');
 
 describe('uuid62', () => {
 	describe('v4', () => {
