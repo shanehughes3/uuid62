@@ -5,7 +5,8 @@
 # uuid62
 Base-62 non-sequential url-friendly UUID generator (RFC4122).
 
-Forked from [dmarcelino](https://github.com/dmarcelino) with updated dependencies.
+Forked from [dmarcelino](https://github.com/dmarcelino/uuid-base62) with updated
+dependencies.
 
 ## Overview
 
