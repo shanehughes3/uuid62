@@ -1,37 +1,37 @@
 {
-  "name": "uuid62",
-  "version": "0.1.0",
-  "description": "Base62 non-sequential url-safe UUID generator (RFC4122)",
-  "main": "uuid62.js",
-  "scripts": {
-    "test": "mocha test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shanehughes3/uuid62.git"
-  },
-  "keywords": [
-    "uuid",
-    "uid",
-    "base62",
-    "unique",
-    "id",
-    "identifier",
-    "url-friendly",
-    "generator",
-    "base64"
-  ],
-  "author": "Shane Hughes <shanehughes314@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/shanehughes3/uuid62/issues"
-  },
-  "homepage": "https://github.com/shanehughes3/uuid62#readme",
-  "dependencies": {
-    "base-x": "^1.0.0",
-    "uuid": "^3.1.0"
-  },
-  "devDependencies": {
-    "mocha": "*"
-  }
+	"name": "uuid62",
+	"version": "0.1.0",
+	"description": "Base62 non-sequential url-safe UUID generator (RFC4122)",
+	"main": "uuid62.js",
+	"scripts": {
+		"test": "mocha test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/shanehughes3/uuid62.git"
+	},
+	"keywords": [
+		"uuid",
+		"uid",
+		"base62",
+		"unique",
+		"id",
+		"identifier",
+		"url-friendly",
+		"generator",
+		"base64"
+	],
+	"author": "Shane Hughes <shanehughes314@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/shanehughes3/uuid62/issues"
+	},
+	"homepage": "https://github.com/shanehughes3/uuid62#readme",
+	"dependencies": {
+		"base-x": "^1.0.0",
+		"uuid": "^3.1.0"
+	},
+	"devDependencies": {
+		"mocha": "*"
+	}
 }
