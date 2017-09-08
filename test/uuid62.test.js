@@ -1,7 +1,7 @@
 var assert = require('assert');
-var uuidBase62 = require('../uuid-base62');
+var uuidBase62 = require('../uuid62');
 
-describe('uuid-base62', function () {
+describe('uuid62', function () {
 	describe('v4', function () {
 		it('should generate a unique id without any params', function () {
 			var res = uuidBase62.v4();
