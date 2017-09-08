@@ -3,65 +3,99 @@
 const uuid = require('uuid');
 const baseX = require('base-x');
 const base62 = baseX('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+const OUTPUT_LENGTH = 22;
+const UUID_LENGTH = 32;
 
 // expose node-uuid and baseX for convenience
-module.exports.uuid = uuid;
-module.exports.baseX = baseX;
-module.exports.customBase = base62;
-module.exports.length = 22;
-module.exports.uuidLength = 32;
-exports.v4 = v4;
-exports.v1 = v1;
-exports.encode = encode;
-exports.decode = decode;
+// exports.uuid = uuid;
+// exports.baseX = baseX;
+// exports.customBase = base62;
+// exports.length = OUTPUT_LENGTH;
+// exports.uuidLength = UUID_LENGTH;
+// exports.v4 = v4;
+// exports.v1 = v1;
+// exports.encode = encode;
+// exports.decode = decode;
 
-function v4() {
-	const args = Array.prototype.slice.call(arguments);
-
-	if (!args[1]) {
-		// make sure we use a buffer to avoid getting an uuid with dashes
-		args[1] = new Buffer(16);
+class UUID62 {
+	constructor() {
+		this.base = base62;
 	}
 
-	const id = uuid.v4.apply(this, args);
-	return encode(id);
-};
-
-
-function v1() {
-	const args = Array.prototype.slice.call(arguments);
-
-	if (!args[1]) {
-		// make sure we use a buffer to avoid getting an uuid with dashes
-		args[1] = new Buffer(16);
+	get uuid() {
+		return uuid;
 	}
 
-	const id = uuid.v1.apply(this, args);
-	return encode(id);
-};
-
-
-function encode(input, encoding) {
-	encoding = encoding || 'hex';
-
-	if (typeof input === 'string') {
-		// remove the dashes to save some space
-		input = new Buffer(input.replace(/-/g, ''), encoding);
+	get baseX() {
+		return baseX;
 	}
-	return ensureLength(base62.encode(input), module.exports.length);
-};
 
-function decode(b62Str, encoding) {
-	encoding = encoding || 'hex';
-	const res = ensureLength(new Buffer(base62.decode(b62Str)).toString(encoding), module.exports.uuidLength);
+	get customBase() {
+		return this.base;
+	}
 
-	// re-add the dashes so the result looks like an uuid
-	const resArray = res.split('');
-	[8, 13, 18, 23].forEach((idx) => {
-		resArray.splice(idx, 0, '-');
-	});
-	return resArray.join('');
-};
+	set customBase(base) {
+		this.base = base;
+	}
+
+	get length() {
+		return OUTPUT_LENGTH;
+	}
+
+	get uuidLength() {
+		return UUID_LENGTH;
+	}
+
+	v4() {
+		const args = Array.prototype.slice.call(arguments);
+
+		if (!args[1]) {
+			// make sure we use a buffer to avoid getting an uuid with dashes
+			args[1] = new Buffer(16);
+		}
+
+		const id = uuid.v4.apply(this, args);
+		return this.encode(id);
+	}
+
+
+	v1() {
+		const args = Array.prototype.slice.call(arguments);
+
+		if (!args[1]) {
+			// make sure we use a buffer to avoid getting an uuid with dashes
+			args[1] = new Buffer(16);
+		}
+
+		const id = uuid.v1.apply(this, args);
+		return this.encode(id);
+	}
+
+
+	encode(input, encoding) {
+		encoding = encoding || 'hex';
+		// console.log(input);
+
+		if (typeof input === 'string') {
+			// remove the dashes to save some space
+			input = new Buffer(input.replace(/-/g, ''), encoding);
+		}
+		// console.log(input);
+		return ensureLength(this.base.encode(input), OUTPUT_LENGTH);
+	}
+
+	decode(b62Str, encoding) {
+		encoding = encoding || 'hex';
+		const res = ensureLength(new Buffer(this.base.decode(b62Str)).toString(encoding), UUID_LENGTH);
+
+		// re-add the dashes so the result looks like an uuid
+		const resArray = res.split('');
+		[8, 13, 18, 23].forEach((idx) => {
+			resArray.splice(idx, 0, '-');
+		});
+		return resArray.join('');
+	}
+}
 
 function ensureLength(str, maxLen) {
 	str = str + '';
@@ -72,7 +106,7 @@ function ensureLength(str, maxLen) {
 		return trimLeft(str, maxLen);
 	}
 	return str;
-};
+}
 
 
 function padLeft(str, padding) {
@@ -82,7 +116,7 @@ function padLeft(str, padding) {
 		pad += '0';
 	}
 	return pad + str;
-};
+}
 
 function trimLeft(str, maxLen) {
 	str = str + '';
@@ -91,4 +125,6 @@ function trimLeft(str, maxLen) {
 		++trim;
 	}
 	return str.slice(trim);
-};
+}
+
+module.exports = new UUID62();
