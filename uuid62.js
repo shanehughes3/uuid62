@@ -1,7 +1,6 @@
 'use strict';
 
-// dependencies
-var uuid = require('node-uuid');
+var uuid = require('uuid');
 var baseX = require('base-x');
 var base62 = baseX('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
 
