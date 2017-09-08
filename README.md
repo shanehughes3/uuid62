@@ -1,6 +1,6 @@
 [![npm version](https://badge.fury.io/js/uuid-base62.svg)](http://badge.fury.io/js/uuid-base62)
 [![Build Status](https://travis-ci.org/dmarcelino/uuid-base62.svg?branch=master)](https://travis-ci.org/dmarcelino/uuid-base62)
-[![Dependency Status](https://david-dm.org/dmarcelino/uuid-base62.svg)](https://david-dm.org/dmarcelino/uuid-base62)
+[![Dependency Status](https://david-dm.org/shanehughes3/uuid62.svg)](https://david-dm.org/shanehughes3/uuid62)
 
 # uuid-base62
 Base62 non-sequential url-friendly UUID generator (RFC4122)
