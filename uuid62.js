@@ -9,14 +9,9 @@ const UUID_LENGTH = 32;
 class UUID62 {
 	constructor() {
 		this.base = base62;
-	}
-
-	get uuid() {
-		return uuid;
-	}
-
-	get baseX() {
-		return baseX;
+		// expose underlying methods for convenience
+		this.uuid = uuid;
+		this.baseX = baseX;
 	}
 
 	get customBase() {
