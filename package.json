@@ -29,6 +29,7 @@
 	"homepage": "https://github.com/shanehughes3/uuid62#readme",
 	"dependencies": {
 		"base-x": "^3.0.2",
+		"buffer": "^5.0.7",
 		"uuid": "^3.1.0"
 	},
 	"devDependencies": {

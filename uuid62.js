@@ -6,6 +6,12 @@ const base62 = baseX('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUV
 const OUTPUT_LENGTH = 22;
 const UUID_LENGTH = 32;
 
+if (typeof Buffer === 'undefined') {
+	// import buffer module for use in browser - browserify and perhaps webpack
+	// should do this automatically, but otherwise we'll pull it in here
+	Buffer = require('buffer').Buffer;
+}
+
 class UUID62 {
 	constructor() {
 		this.base = base62;
