@@ -1,6 +1,6 @@
 {
 	"name": "uuid62",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "Base62 non-sequential url-safe UUID generator (RFC4122)",
 	"main": "uuid62.js",
 	"scripts": {
