@@ -91,7 +91,7 @@ describe('uuid62', () => {
 		});
 
 		it('should generate an id with a custom conventional namespace', () => {
-			uuid.v5('custom-name', '06ad547f-fe02-477b-9473-f7977e4d5e17')
+			uuid62.v5('custom-name', '06ad547f-fe02-477b-9473-f7977e4d5e17')
 				.should.match(/^[0-9A-Za-z]{22}$/);
 		});
 	});

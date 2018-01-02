@@ -1,6 +1,7 @@
 'use strict';
 
 const uuid = require('uuid');
+const uuidv5 = require('uuid/v5');
 const baseX = require('base-x');
 const base62 = baseX('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
 const OUTPUT_LENGTH = 22;
@@ -18,6 +19,9 @@ class UUID62 {
 		// expose underlying methods for convenience
 		this.uuid = uuid;
 		this.baseX = baseX;
+		// pre-defined v5/v3 namespaces
+		this.URL = '3h8Pgc0Wb7WH6HsyG77m40';
+		this.DNS = '3h8PgalTIPNcNhUD4ZbIKY';
 	}
 
 	get customBase() {
@@ -47,7 +51,12 @@ class UUID62 {
 	}
 
 	v5() {
-		
+		const args = Array.prototype.slice.call(arguments);
+		if (typeof args[1] === 'string' && /^[0-9A-Za-z]{22}$/.test(args[1])) {
+			args[1] = this.decode(args[1]);
+		}
+		const id = uuidv5.apply(this, args);
+		return this.encode(id);
 	}
 
 	v1() {
