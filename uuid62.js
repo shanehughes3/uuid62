@@ -46,6 +46,10 @@ class UUID62 {
 		return this.encode(id);
 	}
 
+	v5() {
+		
+	}
+
 	v1() {
 		const args = Array.prototype.slice.call(arguments);
 		if (!args[1]) {
