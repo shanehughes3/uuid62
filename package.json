@@ -1,7 +1,7 @@
 {
 	"name": "uuid62",
 	"version": "0.2.1",
-	"description": "Base62 non-sequential url-safe UUID generator (RFC4122)",
+	"description": "Base-62 UUID generator",
 	"main": "uuid62.js",
 	"scripts": {
 		"test": "mocha test"
@@ -28,12 +28,12 @@
 	},
 	"homepage": "https://github.com/shanehughes3/uuid62#readme",
 	"dependencies": {
-		"base-x": "^3.0.2",
-		"buffer": "^5.0.7",
-		"uuid": "^3.1.0"
+		"base-x": "3.0.4",
+		"buffer": "5.0.8",
+		"uuid": "3.1.0"
 	},
 	"devDependencies": {
-		"chai": "^4.1.2",
-		"mocha": "*"
+		"chai": "4.1.2",
+		"mocha": "^4.1.0"
 	}
 }
