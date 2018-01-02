@@ -10,7 +10,7 @@ describe('uuid62', () => {
 			const id = uuid62.v4();
 			id.should.not.be.null;
 			id.should.be.a('String');
-			id.length.should.equal(22);
+			id.should.match(/^[0-9A-Za-z]{22}$/);
 		});
 
 		it('should convert base-62 id back to uuid format', function () {
@@ -126,6 +126,11 @@ describe('uuid62', () => {
 				output.should.equal(fixtures[key]);
 			});
 		}
+
+		it('should handle uppercase characters in conventional uuids', () => {
+			uuid62.encode('06AD547F-FE02-477B-9473-F7977E4D5E17')
+				.should.equal('0cBaidlJ84Ggc5JA7IYCgv');
+		});
 	});
 
 	describe('custom-base encoding', () => {
