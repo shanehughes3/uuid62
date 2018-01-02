@@ -1,6 +1,8 @@
 'use strict';
 
 const uuid = require('uuid');
+const uuidv1 = require('uuid/v1');
+const uuidv4 = require('uuid/v4');
 const uuidv5 = require('uuid/v5');
 const baseX = require('base-x');
 const base62 = baseX('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
@@ -46,7 +48,7 @@ class UUID62 {
 			// make sure we use a buffer to avoid getting a uuid with dashes
 			args[1] = new Buffer(16);
 		}
-		const id = uuid.v4.apply(this, args);
+		const id = uuidv4.apply(this, args);
 		return this.encode(id);
 	}
 
@@ -65,7 +67,7 @@ class UUID62 {
 			// make sure we use a buffer to avoid getting a uuid with dashes
 			args[1] = new Buffer(16);
 		}
-		const id = uuid.v1.apply(this, args);
+		const id = uuidv1.apply(this, args);
 		return this.encode(id);
 	}
 
