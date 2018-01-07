@@ -5,8 +5,6 @@
 # uuid62
 Base-62 UUID generator
 
-Forked from [dmarcelino](https://github.com/dmarcelino/uuid-base62) with updated
-dependencies.
 
 ## Overview
 
@@ -20,6 +18,7 @@ are alphanumeric [0-9a-zA-Z] and always have a length of 22 chars.
 `uuid-base62`. It provides updated dependencies and more features above that
 package. `uuid62` is designed to be a drop-in replacement for `uuid-base62`,
 however, so migration should be trivial.
+
 
 ## Installation
 ```shell
