@@ -18,7 +18,7 @@ if (typeof Buffer === 'undefined') {
 class UUID62 {
 	constructor() {
 		this.base = base62;
-		// expose underlying methods for convenience
+		// expose underlying methods for convenience (matches uuid-base62)
 		this.uuid = uuid;
 		this.baseX = baseX;
 		// pre-defined v5/v3 namespaces
