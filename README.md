@@ -1,10 +1,11 @@
+# uuid62
+
 [![npm version](https://badge.fury.io/js/uuid62.svg)](http://badge.fury.io/js/uuid62)
 [![CircleCI](https://circleci.com/gh/shanehughes3/uuid62.svg?style=shield)](https://circleci.com/gh/shanehughes3/uuid62)
 [![Dependency Status](https://david-dm.org/shanehughes3/uuid62.svg)](https://david-dm.org/shanehughes3/uuid62)
+[![Known Vulnerabilities](https://snyk.io/test/github/shanehughes3/uuid62/badge.svg?targetFile=package.json)](https://snyk.io/test/github/shanehughes3/uuid62?targetFile=package.json)
 
-# uuid62
 Base-62 UUID generator
-
 
 ## Overview
 
