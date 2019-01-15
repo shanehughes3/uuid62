@@ -8,6 +8,7 @@ const baseX = require('base-x');
 const base62 = baseX('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
 const OUTPUT_LENGTH = 22;
 const UUID_LENGTH = 32;
+let Buffer = (global) ? global.Buffer : undefined;
 
 if (typeof Buffer === 'undefined') {
 	// import buffer module for use in browser - browserify and perhaps webpack
