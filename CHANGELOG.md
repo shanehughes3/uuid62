@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+- Update dependencies
+- Declare `Buffer` in module scope
+
 ## 1.0.0
 
 - Implemented v5 (namespace) UUID creation
