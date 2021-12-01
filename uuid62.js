@@ -1,9 +1,9 @@
 'use strict';
 
 const uuid = require('uuid');
-const uuidv1 = require('uuid/v1');
-const uuidv4 = require('uuid/v4');
-const uuidv5 = require('uuid/v5');
+const uuidv1 = uuid.v1;
+const uuidv4 = uuid.v4;
+const uuidv5 = uuid.v5;
 const baseX = require('base-x');
 const base62 = baseX('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
 const OUTPUT_LENGTH = 22;
