@@ -2,7 +2,7 @@ const chai = require('chai');
 const should = chai.should();
 const expect = chai.expect;
 const uuid62 = require('../uuid62');
-const v5 = require('uuid/v5');
+const { v5 } = require('uuid');
 
 describe('uuid62', () => {
 	describe('v4', () => {

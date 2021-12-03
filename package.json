@@ -28,12 +28,12 @@
 	},
 	"homepage": "https://github.com/shanehughes3/uuid62#readme",
 	"dependencies": {
-		"base-x": "3.0.5",
-		"buffer": "5.2.1",
-		"uuid": "3.3.2"
+		"base-x": "3.0.9",
+		"buffer": "6.0.3",
+		"uuid": "8.3.2"
 	},
 	"devDependencies": {
-		"chai": "4.2.0",
-		"mocha": "^5.2.0"
+		"chai": "~4.3.4",
+		"mocha": "~9.1.3"
 	}
 }
