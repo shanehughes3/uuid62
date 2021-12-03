@@ -1,6 +1,6 @@
 {
 	"name": "uuid62",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Base-62 UUID generator",
 	"main": "uuid62.js",
 	"scripts": {
