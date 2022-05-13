@@ -8,13 +8,9 @@ const baseX = require('base-x');
 const base62 = baseX('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
 const OUTPUT_LENGTH = 22;
 const UUID_LENGTH = 32;
-let Buffer = (global) ? global.Buffer : undefined;
 
-if (typeof Buffer === 'undefined') {
-	// import buffer module for use in browser - browserify and perhaps webpack
-	// should do this automatically, but otherwise we'll pull it in here
-	Buffer = require('buffer').Buffer;
-}
+const hasGlobalBuffer = typeof global !== 'undefined' && 'Buffer' in global;
+const { Buffer } = hasGlobalBuffer ? global : require('buffer');
 
 class UUID62 {
 	constructor() {
